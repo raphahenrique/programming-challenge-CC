@@ -24,7 +24,7 @@ the queue), and the second line has n space-separated integers describing the fi
 -Constraints
    1<=T<=10
    1<=n<=10⁵
-- Subtasks
+-Subtasks
    For 60% score 1<=n<=10³
    For 100% score 1<=n<=10⁵
 
