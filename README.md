@@ -21,13 +21,12 @@ place to get the queue into its current state!
 The first line contains an integer, T, denoting the number of test cases.
 Each test case is comprised of two lines; the first line has n(an integer indicating the number of people in
 the queue), and the second line has n space-separated integers describing the final state of the queue.
-      - Constraints
-        1<=T<=10
-        1<=n<=10⁵
-        
-      - Subtasks
-        For 60% score 1<=n<=10³
-        For 100% score 1<=n<=10⁵
+-Constraints
+   1<=T<=10
+   1<=n<=10⁵
+- Subtasks
+   For 60% score 1<=n<=10³
+   For 100% score 1<=n<=10⁵
 
 -> Output Format
 Print an integer denoting the minimum number of bribes needed to get the queue into its final state; print
