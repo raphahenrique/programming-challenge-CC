@@ -23,14 +23,14 @@ public class NewYearChaos {
 
         //Specifications of input test files
         String fileName = "input01.txt";
-        //File file = new File(args[0]);
+        //File file = new File(args[0]); //If we opt by passing test file in args
         File file = new File("/home/raphael/Documents/Git/programming-challenge-"
                 +"CC/new-year-chaos-testcases/input/" + fileName);
         
         
         //Output files
         String outputName = "output01.txt";
-        //File outputFile = new File(args[1]);
+        //File outputFile = new File(args[1]);//If we wish to specify the output location
         File outputFile = new File("/home/raphael/Documents/Git/programming-challenge-"
                 +"CC/new-year-chaos-testcases/output/" + outputName);
         //Where file will be written
