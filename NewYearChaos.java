@@ -12,20 +12,31 @@ package newyearchaos;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 public class NewYearChaos {
 
-    
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        //Specifications of test files
-        String fileName = "input00.txt";
-
+        //Specifications of input test files
+        String fileName = "input01.txt";
         //File file = new File(args[0]);
         File file = new File("/home/raphael/Documents/Git/programming-challenge-"
                 +"CC/new-year-chaos-testcases/input/" + fileName);
+        
+        
+        //Output files
+        String outputName = "output01.txt";
+        //File outputFile = new File(args[1]);
+        File outputFile = new File("/home/raphael/Documents/Git/programming-challenge-"
+                +"CC/new-year-chaos-testcases/output/" + outputName);
+        //Where file will be written
+        PrintWriter pw = new PrintWriter(new FileWriter(outputFile));
+
+        
         
         int T = 0; //Number of test cases in file
         int n = 0; //Number of people queued up
@@ -45,7 +56,7 @@ public class NewYearChaos {
             //Reading line by line
             while(T > t){
                 currentLine = br.readLine();
-                if(currentLine.length() == 1){ //It's time to get next queue size
+                if(!currentLine.contains(" ")){//It's time to get next queue size
                     n = Integer.parseInt(currentLine);
                 }else{
                     //Fills the queue
@@ -72,9 +83,16 @@ public class NewYearChaos {
                             int sub = ((j+1)- queue[j]);
                             if(sub > 0){
                                 bribes += sub;
+                            }else if((sub == -2) && ((j+2) - queue[j+1] == 0)){
+                            //This special case happens when we have values that
+                            //'walked' and end up in their original places
+                            //example: Final queue-> (3 2 1), here 2, first swapped
+                            //with 3, and later with 1, returning to original pos.
+                                bribes += 1;
                             }
                         }
                     }
+                    
                     if(!chaotic)
                         result += bribes + "\n";
                     else
@@ -87,6 +105,12 @@ public class NewYearChaos {
             System.out.println(result);
             
             br.close();
+            
+            pw.print(result);
+            pw.flush();
+            pw.close();
+        
+
         } catch (IOException e) {
             e.printStackTrace();
         }
