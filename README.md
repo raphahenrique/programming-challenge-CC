@@ -2,7 +2,29 @@
 
 *Description of the problem is written below.
 
-## 
+## Tasks
+### What is the O() complexity of your solution?
+
+The complexity of my solution is O(n²).
+Since we have 2 for's inside a while loop, and these for's are not nested, our complexity would be O(2n²) that is equal to O(n²).
+
+
+### How can you improve your existing solution? If that is possible, what would your new solution's O() complexity be?
+What is the complexity class  (P, NP, NP-complete, etc) of this problem ?
+One way that probably improve the current solution, would be analysing the values of the substraction, to assertain about the next value.
+What I found in the internet, was people using the bubble sort algorithm to compare the next two values.
+However, these two approaches would still run in a O(n²) complexity
+
+The complexity class is of P, since it can be solved on a polynomial time.
+
+
+### Provide us a diagram containing the state machine automata of your algorithm;
+I've included the diagram inside the folder **Diagram** 
+
+
+### Bonus point: Provide us the abstract syntax tree (AST) representation of your algorithm;
+I've included the AST inside the folder **ast**
+
 
 
 ## Problem
